@@ -1,0 +1,13 @@
+
+public class EightQueen {
+
+	public static void main(String[] args) {
+		Queen board1 = new Queen();
+		
+		board1.genBoard();
+		board1.showBoard(); 
+	}
+	
+	
+
+}
