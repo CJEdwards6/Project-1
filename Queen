@@ -1,0 +1,50 @@
+
+import java.util.Random;
+
+public class Queen {
+
+	// Making the chess board as an 8x8 array
+			private final int queens = 8;
+			private int board[][] = new int[queens][queens];
+			private boolean hasQueen = false;
+			
+			Queen() {
+				// Initializing every square to equal 0
+				for (int i = 0; i < queens; i++)
+				{
+					for (int j = 0; j < queens; j++)
+					{
+						board[i][j] = 0;
+					}
+				}
+			}
+			
+			// Method to print the board
+			public void showBoard()
+			{
+				for (int i = 0; i < queens; i++)
+				{
+					for (int j = 0; j < queens; j++)
+					{
+						System.out.print(board[i][j] + " ");
+					}
+					System.out.println("");
+				}
+			}
+			
+			/* public static void hasQueen(int[][] board)
+			{
+				if (board)
+			} */
+			
+			public void genBoard()
+			{
+				Random rand = new Random();
+				Random rand2 = new Random();
+				for (int i = 0; i < queens; i++)
+				{
+					board[i][rand.nextInt(queens+1)] = 1;
+				}
+			} 
+			
+}
