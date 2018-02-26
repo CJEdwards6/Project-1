@@ -43,7 +43,7 @@ public class Queen {
 				Random rand2 = new Random();
 				for (int i = 0; i < queens; i++)
 				{
-					board[i][rand.nextInt(queens+1)] = 1;
+					board[i][rand.nextInt(queens)] = 1;
 				}
 			} 
 			
