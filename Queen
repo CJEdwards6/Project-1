@@ -6,7 +6,8 @@ public class Queen {
 	// Making the chess board as an 8x8 array
 			private final int queens = 8;
 			private int board[][] = new int[queens][queens];
-			private boolean hasQueen = false;
+			Random rand = new Random();
+			int column = rand.nextInt(queens);
 			
 			Queen() {
 				// Initializing every square to equal 0
@@ -39,12 +40,32 @@ public class Queen {
 			
 			public void genBoard()
 			{
-				Random rand = new Random();
-				Random rand2 = new Random();
+				
+				
+				
 				for (int i = 0; i < queens; i++)
 				{
-					board[i][rand.nextInt(queens)] = 1;
+					board[i][column] = 1;
+					this.checkBoard(i,column);
+					while (this.checkBoard(i,column) == false)
+					{
+					board[i][column] = 0;
+					column = rand.nextInt(queens);
+					board[i][column] = 1;
+					}
 				}
 			} 
+			
+			public boolean checkBoard(int row, int col)
+			{
+				for (int j = 0; j < row; j++)
+				{
+					if (board[j][col] == 1)
+					{
+						return false;
+					}
+				}
+				return true; 
+			}
 			
 }
